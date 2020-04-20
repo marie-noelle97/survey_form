@@ -2,15 +2,314 @@
 <html lang="eng">
   <head>
     <title>Survey Form</title>
+    <style>
+  @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+
+body {
+  font-family: poppins, sans-serif;
+  font-size 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color:var(--color-white);
+  margin: 0;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+h1 {
+  font-size: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+
+#description {
+  text-align: center;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+h1,
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+.header {
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+
+.description {
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.clue {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+  color: #e4e4e4;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* form */
+
+form {
+  background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 480px) {
+  form {
+    padding: 2.5rem;
+  }
+}
+
+.form-group {
+  margin: 0 auto 1.25rem auto;
+  padding: 0.25rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2.375rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.input-radio,
+.input-checkbox {
+  display: inline-block;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.625rem;
+  resize: vertical;
+}
+
+
+
+.submit-button {
+  display : block;
+  width: 100%;
+  padding:0;75rem;
+  background: #511FDA5;
+  color: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+    </style>
   </head>
-  <body>
-    <h1 id="title">How much do you like watching movies</h1>
+    <div class="container">
+      <body>
+         <header>
+          <h1 id="title">What kind of movie buff are you ?</h1>
+          <p  id="description">This is a survey where you can tell us about the movies that captivates you!</p>
+         </header>
+         <form id="survey-form">
+           <label for=name id="name-label">Name:</label><br>
+           <input type="text" name="name" id="name" placeholder="Enter your name" required></input>
+         <br>
+            <label for="email" id="email-label">Email:</label><br>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required></input>
+        <br>
+            <label for="number" id="number-label">Age (optional)</label><br>
+            <input type="number" name="number" id="number" min="0" max="100" placeholder="Age"></input>
+        <br>
+        <div class="form-group">
+            <p>Are you male or female?</p>
+            <label for=male id="male"><br>
+              <input name="gender" type="radio" class="input-radio" value="male" checked>Male</label>
+            <label for="female" id="female>"<br>
+              <input name="gender" type="radio" class="input-radio" value="female" checked>Female</label>
+        </div>
+         <div>
+            <p>What genre film do you like to watch ?</p>
+            <label for=action id="action"><br>
+              <input name="like-film-genre" type="checkbox" class="input-checkbox" value="action" checked>Action</label>
+            <label for=adventure id="adventure">
+              <input name="like-film-genre" type="checkbox" class="input-checkbox" value="adventure">Adventure</label>
+            <label for=comedy id="comedy">
+              <input name="like-film-genre" type="checkbox" class="input-checkbox" value="comedy">Comedy</label>
+            <label for=drama id="drama">
+              <input name="like-film-genre" type="checkbox" class="input-checkbox" value="drama" >Drama</label>
+            <label for=Historical id="historical">
+              <input name="like-film-genre" type="checkbox" class="input-checkbox" value="historical">Historical</label>
+            <label for=horror id="horror"><br>
+              <input name="like-film-genre" type="checkbox" class="input-checkbox" value="horror" >Horror</label>
+            <label for=Musicals id="musicals">
+              <input name="like-film-genre" type="checkbox" class="input-checkbox" value="musicals" >Musicals</label>
+            <label for=Sci-fi id="sci-fi">
+              <input name="like-film-genre" type="checkbox" class="input-checkbox" value="sci-fi" >Sci-Fi</label>
+            <label for="war films" id="war films">
+              <input name="like-film-genre" type="checkbox" class="input-checkbox" value="war films" >War Films</label>
+              <label for=romance id="romance">
+                <input name="like-film-genre" type="checkbox" class="input-checkbox" value="romance" >Romance</label>
+              <label for=romcoms id="romcoms">
+                  <input name="like-film-genre" type="checkbox" class="input-checkbox" value="romcoms" >Romcoms</label>
+          </div>
+          <div>
+             <p>What genre film do you dislike to watch ?</p>
+             <label for=action id="action"><br>
+               <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="action" checked>Action</label>
+             <label for=adventure id="adventure">
+               <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="adventure">Adventure</label>
+             <label for=comedy id="comedy">
+               <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="comedy">Comedy</label>
+             <label for=drama id="drama">
+               <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="drama" >Drama</label>
+             <label for=Historical id="historical">
+               <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="historical">Historical</label>
+             <label for=horror id="horror"><br>
+               <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="horror" >Horror</label>
+             <label for=Musicals id="musicals">
+               <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="musicals" >Musicals</label>
+             <label for=Sci-fi id="sci-fi">
+               <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="sci-fi" >Sci-Fi</label>
+             <label for="war films" id="war films">
+               <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="war films" >War Films</label>
+               <label for=romance id="romance">
+                 <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="romance" >Romance</label>
+               <label for=romcoms id="romcoms">
+                   <input name="dislike-film-genre" type="checkbox" class="input-checkbox" value="romcoms" >Romcoms</label>
+           </div>
+           <div>
+              <p>How often do you go to the cinema ?</p>
+                <select id="dropdown" name="frequency" class="form-control" required>
+                    <option disabled selected value>Select frequency</option>
+                    <option value="never">Never</option>
+                    <option value="once a year">Once a year</option>
+                    <option value="once a month">Once a month</option>
+                    <option value="2-5 times a month">2-5 times a month</option>
+                    <option value="otherr">Other</option>
+                </select>
+           </div>
+           <div>
+              <p>What makes you want to watch a film ?</p>
+                   <label for="famous director" id="famous director"><br>
+                     <input name="why" type="checkbox" class="input-checkbox" value="famous director" checked>Famous director</label>
+                   <label for="why" id="famous cast">
+                     <input name="why" type="checkbox" class="input-checkbox" value="famous cast">Famous cast</label>
+                   <label for=storyline id="storyline">
+                     <input name="why" type="checkbox" class="input-checkbox" value="storyline">Storyline</label>
+                   <label for=genre id="genre">
+                     <input name="why" type="checkbox" class="input-checkbox" value="genre" >Genre</label>
+                   <label for="good trailer" id="good trailer">
+                     <input name="why" type="checkbox" class="input-checkbox" value="good trailer">Good trailer</label>
+          </div>
+          <div>
+              <p>How do you find out about new films ?</p>
+                <label for="on the internet" id="on the internet"><br>
+                  <input name="how-find" type="checkbox" class="input-checkbox" value="on the internet" checked>On the internet</label>
+                <label for="on the television" id="on the television">
+                  <input name="how-find" type="checkbox" class="input-checkbox" value="on the television">On the television</label>
+                <label for="in a magazine" id="in a magazine">
+                  <input name="how-find" type="checkbox" class="input-checkbox" value="in a magazine">In a magazine</label>
+                <label for="film posters" id="film posters">
+                  <input name="how find" type="checkbox" class="input-checkbox" value="film posters">Film posters</label>
+                <label for="trailers" id="trailers">
+                  <input name="how-findwhy" type="checkbox" class="input-checkbox" value="trailers">Trailers</label>
+          </div>
+          <div class="form-group">
+              <p>Do you have Netflix?</p>
+                <label for=yes id="yes"><br>
+                  <input name="yes_no" type="radio" class="input-radio" value="yes" checked>Yes</label>
+                <label for="no" id="no>"<br>
+                  <input name="yes_no" type="radio" class="input-radio" value="no">No</label>
+          </div>
 
-
-
-
-
-
-  </body>
-<script>"https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"</script>
+          <div class="form-group">
+            <p>Any comments or suggestions ?</p>
+            <textarea id="comment" class="input-textarea" name="comment" placeholder="Enter your comments here..."></textarea>
+          </div>
+          <div class="form-group">
+           <button type="submit" id="submit" class="submit-button">Submit</button>
+          </div>
+       </form>
+      </body>
+    </div>
+<script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </html>
